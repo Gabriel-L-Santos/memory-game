@@ -28,7 +28,6 @@
 }
 
 .front {
-    background-image: url('../images/biff-tannen.jpg');
     transform: rotateY(180deg);
 }
 
