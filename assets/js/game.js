@@ -14,12 +14,14 @@ const characters = [
 ];
 
 const createElement = (tag, className) => {
+
     const element = document.createElement(tag);
     element.className = className;
     return element;
 }
 
 const createCard = (character) => {
+
     const card = createElement('div', 'card');
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
@@ -33,7 +35,10 @@ const createCard = (character) => {
 }
 
 const loadGame = () => {
-    characters.forEach((character) => {
+
+    const duplicateCharacters = [ ...characters, ...characters ];
+
+    duplicateCharacters.forEach((character) => {
         
         const card = createCard(character);
         grid.appendChild(card);
