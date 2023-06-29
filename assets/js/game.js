@@ -38,7 +38,9 @@ const loadGame = () => {
 
     const duplicateCharacters = [ ...characters, ...characters ];
 
-    duplicateCharacters.forEach((character) => {
+    const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
+
+    shuffledArray.forEach((character) => {
         
         const card = createCard(character);
         grid.appendChild(card);
