@@ -1,5 +1,6 @@
 const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
+const timer = document.querySelector('.timer');
 
 const characters = [
     'biff-tannen',
@@ -111,12 +112,16 @@ const loadGame = () => {
     });
 }
 
+const startTimer = () => {
+    setInterval(() => {
+        const currentTime = +timer.innerHTML;
+        timer.innerHTML = currentTime + 1;
+    }, 1000);
+}
+
 window.onload = () => {
-
-    const playerName = localStorage.getItem('player');
-
-    spanPlayer.innerHTML = playerName;
-
+    spanPlayer.innerHTML = localStorage.getItem('player');;
+    startTimer();
     loadGame(); 
 }
 
