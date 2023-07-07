@@ -29,7 +29,8 @@ const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
     if (disabledCards.length === 20) {
-        alert('Great Scott!! You win!!');
+        clearInterval(this.loop);
+        alert(`Great Scott, ${spanPlayer.innerHTML}!! You did it!! Your time is: ${timer.innerHTML}`);
     }
 }
 
@@ -113,7 +114,7 @@ const loadGame = () => {
 }
 
 const startTimer = () => {
-    setInterval(() => {
+    this.loop = setInterval(() => {
         const currentTime = +timer.innerHTML;
         timer.innerHTML = currentTime + 1;
     }, 1000);
@@ -124,4 +125,3 @@ window.onload = () => {
     startTimer();
     loadGame(); 
 }
-
