@@ -51,6 +51,12 @@
     max-width: 300px;
     padding: 15px;
     width: 100%;
+    transition: .4s;
+}
+
+.login__button:hover {
+    color: #df7a40;
+    background-color: #fff;
 }
 
 .login__button:disabled {
